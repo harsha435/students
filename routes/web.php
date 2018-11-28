@@ -17,3 +17,6 @@ Route::get('/', function () {
 
 Route::get('students','StudentsController@create');
 Route::post('students','StudentsController@store');
+
+route::get('/show','StudentsController@show');
+Route::get('/index','StudentsController@index');

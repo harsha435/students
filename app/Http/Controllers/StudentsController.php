@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class StudentsController extends Controller
 {
@@ -13,8 +14,15 @@ class StudentsController extends Controller
      */
     public function index()
     {
-        //
+       return DB::table('students')->get();
+      /* $students=Students::get(); */
+      /*$students = Blog::get()->all();*/
+      /*$students = Blog::all();*/
+      /*$students = DB::('SELECT * FROM students');*/
+      /*$students = \App\Students::all();
+      return view('index',['students'=> $students]);*/
     }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -51,9 +59,9 @@ class StudentsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        return view('show');
     }
 
     /**
@@ -64,7 +72,7 @@ class StudentsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('edit');
     }
 
     /**
